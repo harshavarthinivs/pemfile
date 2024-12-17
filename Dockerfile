@@ -1,5 +1,6 @@
 FROM public.ecr.aws/amazonlinux/amazonlinux:latest
-RUN yum update -y && \ yum install -y httpd
+RUN yum update -y && \
+    yum install -y httpd
 RUN echo "Hello World" > /var/www/html/index.html
 RUN echo 'mkdir -p /var/run/httpd' >> /root/run_apache.sh && \
  echo 'mkdir -p /var/lock/httpd' >> /root/run_apache.sh && \
